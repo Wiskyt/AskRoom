@@ -13,6 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             component: "room"
         }
     ];
+
     $urlRouterProvider.otherwise("/room"); // Page par défaut
     states.forEach(function(state) {
         $stateProvider.state(state);

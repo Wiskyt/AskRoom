@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+    width: 100%;
+   background-color:  grey;
+}
+.title {
+    text-align: center;
+}
+.questionwaiting {
+    background-color: blue;
+    height: 250px;
+    width: 400px;
+    
+}
+.question {
+    background-color: green;
+    height: 200PX;
+}
+.tchat {
+   background-color: yellow;
+    height: 250px;
+}
+.answer {
+  background-color: purple;
+    height: 250px;  
+}
+.postquestion {
+     background-color: red;
+    height: 150px;  
+}
+#pquestion{
+background-color: blue;
+}
+.flow-text{
+   background-color: red;
+}
