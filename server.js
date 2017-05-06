@@ -8,6 +8,21 @@ var cookieParser = require('cookie-parser');
 // var DB = require('./server/database');
 // DB.connect();
 
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket) { // Lorsqu'une connexion socket est crée on initialie les events
+    console.log("Nouvel user");
+
+    socket.on("chat message", function(obj) {
+        if (obj.author && obj.message) {
+            io.emit("chat message", obj);
+        }
+    });
+});
+
+server.listen(3000);
+
 // Routes
 var routes = require('./server/routes/index');
 // var usersRoute = require('./server/routes/usersRoute');
