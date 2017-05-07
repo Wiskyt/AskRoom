@@ -37,6 +37,4 @@ function Chat($scope, $resource) {
         });
         $scope.obj = obj;
     });
-
-
 }

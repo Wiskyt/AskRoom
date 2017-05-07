@@ -16,7 +16,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             name: "chat",
             url: "/chat",
             component: "chat"
-
+        }, {
+            name: "question",
+            url: "/question",
+            component: "question"
         }
     ];
 

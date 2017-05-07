@@ -1,23 +1,20 @@
-<div class="container">
+<div id="room-root" class="container">
     <div class="row">
-        <div class="col s4 push-s8 questionwaiting"><span class="questionwaiting">QUESTION EN ATTENTE</span></div>
-        <div class="col s8 pull-s4 question">
-            <div class="col s8" id="answercontainer">question</div>
-            <span class="question">BODY</span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s4 push-s8 tchat"><span class="tchat">Tchat</span></div>
-        <div class="col s8 pull-s4 answer"><span class="answer">Answer</span></div>
-        <div class="row">
-            <div class="col s12 postquestion">
+        <div class="col s8 main-container">
+            <question id="question-container"></question>
+            <div id="input-container">
                 <a class="waves-effect waves-teal btn-flat">Post Question</a>
-                <textarea name="question" id="pquestion" cols="30" rows="10"></textarea>
+                <textarea name="question" id="answer-input" cols="30" rows="10"></textarea>
             </div>
         </div>
-    </div>
 
-    <div ng-repeat="message in $ctrl.chatHistory">
-        qdkqsdkqsdqksjdqjk {{message.author}} + {{message.message}}
+        <div class="col s4 tool-container">
+            <div id="questions-queue">
+                <span>File d'attente</span>
+            </div>
+            <div id="chat">
+                <span>Chat</span>
+            </div>
+        </div>
     </div>
 </div>
