@@ -12,6 +12,7 @@ function Room($scope, $resource, socket) {
 
     $scope.test = "Yo mon pote";
 
+    this.chatHistory = [];
 
     socket.on("connect", function() {
         console.log("lets go");
@@ -20,11 +21,15 @@ function Room($scope, $resource, socket) {
         var typicalAnswer = { id: 0, questionId: 0, author: "Wiskyt", content: "Va voir sur google" };
         var typicalUpvote = { questionId: 0, answerId: 0 };
 
-        socket.emit("chat message", typicalChat);
-        socket.emit("new question", typicalQuestion);
+        socket.emit("chat message", typicalChat); // on envoie un msg
+        socket.emit("chat message", typicalChat); // on envoie un msg
+        socket.emit("chat message", typicalChat); // on envoie un msg
+        socket.emit("chat message", typicalChat); // on envoie un msg
+        socket.emit("new question", typicalQuestion); // on envoie une new question
 
-        socket.on("chat message", function(obj) {
-            console.log("CM Received", obj);
+        socket.on("chat message", function(obj) { // on recois un msg
+            console.log("CM Received", obj.author);
+            _this.chatHistory.push(obj);
         });
 
         socket.on("new question", function(obj) {
