@@ -1,8 +1,33 @@
-.chatMessage {
-    background-color: black;
-    color: white;
+#chat-root {
+    height: 100%;
+    width: 100%;
 }
 
-#chat-root {
-    background-color: black
+.chatMessage {
+    background-color: rgb(140, 137, 137);
+    color: white;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+#charTitle {
+    font-size: 40px;
+    text-align: center;
+}
+
+#chatValid {
+    width: 90%;
+}
+
+#chatButton {
+    background-color: rgb(117, 117, 117);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
