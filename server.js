@@ -10,43 +10,49 @@ var cookieParser = require('cookie-parser');
 
 var date = new Date();
 
-var typicalAnswer = { id: 0, questionId: 0, author: "Wiskyt", content: "Va voir sur google", upvotes: 0 };
-var typicalAnswer2 = { id: 0, questionId: 0, author: "Kevin", content: "Mange un kiwi" };
-var typicalQuestion = {
-    id: 0,
-    author: "Wiskyt",
-    content: "Comment devisser un tuyau d'arrosage ?",
-    answers: []
-};
-var typicalQuestion2 = { id: 0, author: "Donzo", content: "Comment on fait pour se frotter le tuyau avec une chaussette ?" };
-
-for (let i = 0; i < 20; i++) {
-    if (i % 2 == 0) {
-        typicalAnswer.upvotes = Math.round(Math.random() * 400);
-        typicalAnswer.id = typicalQuestion.answers.length;
-        typicalQuestion.answers.push(typicalAnswer);
-    } else {
-        typicalAnswer2.id = typicalQuestion.answers.length;
-        typicalQuestion.answers.push(typicalAnswer2);
-    }
-}
-
 var questions = [],
     questionInterval = 20; // In seconds
-
-for (let i = 0; i < 20; i++) {
-    if (questionInterval == 20) {
-        typicalQuestion.id = questions.length;
-        questions.push(typicalQuestion);
-    } else {
-        typicalQuestion2.id = questions.length;
-        questions.push(typicalQuestion2);
-    }
-}
 
 var chatHistory = [],
     chatHistoryLength = 500,
     chatId = 0;
+
+var defaultQuestion = { id: 0, author: "Admin", content: "How to make a good presentation ?", answers: [] };
+questions.push(defaultQuestion);
+
+//     var typicalAnswer = { id: 0, questionId: 0, author: "Wiskyt", content: "Va voir sur google", upvotes: 0 };
+// var typicalAnswer2 = { id: 0, questionId: 0, author: "Kevin", content: "Mange un kiwi" };
+// var typicalQuestion = {
+//     id: 0,
+//     author: "Wiskyt",
+//     content: "Comment devisser un tuyau d'arrosage ?",
+//     answers: []
+// };
+// var typicalQuestion2 = { id: 0, author: "Donzo", content: "Comment on fait pour se frotter le tuyau avec une chaussette ?" };
+
+// for (let i = 0; i < 20; i++) {
+//     if (i % 2 == 0) {
+//         typicalAnswer.upvotes = Math.round(Math.random() * 400);
+//         typicalAnswer.id = typicalQuestion.answers.length;
+//         typicalQuestion.answers.push(typicalAnswer);
+//     } else {
+//         typicalAnswer2.id = typicalQuestion.answers.length;
+//         typicalQuestion.answers.push(typicalAnswer2);
+//     }
+// }
+
+// var questions = [],
+//     questionInterval = 20; // In seconds
+
+// for (let i = 0; i < 20; i++) {
+//     if (questionInterval == 20) {
+//         typicalQuestion.id = questions.length;
+//         questions.push(typicalQuestion);
+//     } else {
+//         typicalQuestion2.id = questions.length;
+//         questions.push(typicalQuestion2);
+//     }
+// }
 
 // ---------------------------- SOCKETS
 var server = require('http').createServer(app);
@@ -82,6 +88,7 @@ io.on('connection', function(socket) { // Lorsqu'une connexion socket est crée 
             let question = getQuestion(questionAnswer.questionId);
             console.log(question);
             questionAnswer.id = question.answers.length;
+            questionAnswer.upvotes = 0;
             question.answers.push(questionAnswer);
             io.emit("question answer", questionAnswer);
         }
