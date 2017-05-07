@@ -1,20 +1,21 @@
 <div id="room-root" class="container">
-    <div class="row">
-        <div class="col s8 main-container">
-            <question id="question-container"></question>
-            <div id="input-container">
-                <a class="waves-effect waves-teal btn-flat">Post Question</a>
-                <textarea name="question" id="answer-input" cols="30" rows="10"></textarea>
-            </div>
-        </div>
+   <div class="row">
+      <div class="col s8 main-container">
+         <div id="question-container">
+            <question id="question" author="Wiskyt"></question>
+         </div>
 
-        <div class="col s4 tool-container">
-            <div id="questions-queue">
-                <span>File d'attente</span>
-            </div>
-            <div id="chat">
-                <span>Chat</span>
-            </div>
-        </div>
-    </div>
+         <div id="input-container">
+            <a class="waves-effect waves-teal btn-flat">Post Question</a>
+            <textarea name="question" id="answer-input" cols="30" rows="10"></textarea>
+         </div>
+      </div>
+
+      <div class="col s4 tool-container">
+         <div id="questions-queue">
+            <span>File d'attente</span>
+         </div>
+         <chat></chat>
+      </div>
+   </div>
 </div>

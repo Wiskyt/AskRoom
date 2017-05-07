@@ -13,7 +13,6 @@ function Chat($scope, $resource, socket) {
     //  $scope.test = "Yo mon pote"; 
     this.chatHistory = [];
 
-
     var msg = { author: "Wiskyt", message: "Yo les jjjj" }; // Example chat message
 
     // to make things interesting, have it send every second
@@ -24,15 +23,13 @@ function Chat($scope, $resource, socket) {
 
     socket.on("chat message", function(obj) { // Lorsque l'on recois un chat message
         _this.chatHistory.push(obj);
-        //console.log(obj);
-        // console.log(_this.chatHistory);
 
-        //  console.log("Received", obj); // on affiche l'obj passé
-
+        console.log("Received", obj); // on affiche l'obj passé
+        _this.chatHistory.push(obj);
     });
+
 
     socket.on("disconnect", function() {
         clearInterval(interval);
     });
-
 }
