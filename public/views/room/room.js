@@ -21,9 +21,6 @@ function Room($scope, $resource, socket) {
     //  socket.emit("new question", typicalQuestion); // on envoie une new question
 
 
-
-
-
     //  socket.on("chat message", function(obj) { // on recois un msg
     //      console.log("CM Received", obj.author);
     //      _this.chatHistory.push(obj);
@@ -44,11 +41,7 @@ function Room($scope, $resource, socket) {
     //      console.log("AU Received", obj);
     //  });
 
-
-
     //  socket.on("disconnect", function() {
     //      clearInterval(interval);
     //  });
-
-
 }
