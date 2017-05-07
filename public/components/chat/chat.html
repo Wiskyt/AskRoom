@@ -1,17 +1,12 @@
 <div id="chat-root">
-
     <div id="chatTitle">Chat AskRoom</div>
 
 
-    <div ng-repeat="message in $ctrl.chatHistory" class="chatMessage">
-        {{message.author}} <span>{{message.message}}</span>
+    <div ng-repeat="msg in $ctrl.chatHistory track by $index" class="chatMessage">
+        {{msg.author}} <span>{{msg.message}}</span>
     </div>
     <div>
         <input type="text" ng-model="$ctrl.query" placeholder="Query here...">
         <button>Search!</button>
     </div>
-</div>
-
-
-
 </div>
