@@ -10,14 +10,33 @@ var cookieParser = require('cookie-parser');
 
 var date = new Date();
 
-var typicalQuestion = { id: 0, author: "Wiskyt", content: "Comment devisser un tuyau d'arrosage ?" };
+var typicalAnswer = { id: 0, questionId: 0, author: "Wiskyt", content: "Va voir sur google", upvotes: 0 };
+var typicalAnswer2 = { id: 0, questionId: 0, author: "Kevin", content: "Mange un kiwi" };
+var typicalQuestion = {
+    id: 0,
+    author: "Wiskyt",
+    content: "Comment devisser un tuyau d'arrosage ?",
+    answers: []
+};
 var typicalQuestion2 = { id: 0, author: "Donzo", content: "Comment on fait pour se frotter le tuyau avec une chaussette ?" };
-var typicalAnswer = { id: 0, questionId: 0, author: "Wiskyt", content: "Va voir sur google" };
+
+for (let i = 0; i < 20; i++) {
+    if (i % 2 == 0) {
+        typicalAnswer.upvotes = Math.round(Math.random() * 400);
+        console.log(typicalAnswer.upvotes);
+        typicalAnswer.id = typicalQuestion.answers.length;
+        typicalQuestion.answers.push(typicalAnswer);
+    } else {
+        typicalAnswer2.id = typicalQuestion.answers.length;
+        typicalQuestion.answers.push(typicalAnswer2);
+    }
+}
+
 var questions = [],
     questionInterval = 5; // In seconds
 
 for (let i = 0; i < 20; i++) {
-    if (i % 2 == 0) {
+    if (questionInterval == 5) {
         typicalQuestion.id = questions.length;
         questions.push(typicalQuestion);
     } else {
@@ -81,7 +100,7 @@ io.on('connection', function(socket) { // Lorsqu'une connexion socket est crée 
 
 setInterval(function() {
     console.log("Question switch ! State : ", questions);
-    if (questions[0]) {
+    if (questions[1]) {
         io.emit("next question", questions[0]);
         var questionSave = questions.shift();
     }
