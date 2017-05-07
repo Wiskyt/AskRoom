@@ -8,6 +8,7 @@ header {
     width: 100%;
     height: 100px;
     background: linear-gradient(#424242, #302E30);
+    padding-top: 20px;
 }
 
 #header-title {
@@ -15,4 +16,8 @@ header {
     vertical-align: middle;
     font: 52px Georgia bold;
     color: white;
+}
+
+#header-title:hover {
+    color: slategray;
 }

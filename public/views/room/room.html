@@ -4,7 +4,7 @@
             <question id="question"></question>
 
             <div id="input-container" class="container">
-                <button ng-click="$ctrl.postQuestion()" class="btn">Post Question</button>
+                <button ng-click="$ctrl.postQuestion()" class="btn">Let's Ask</button>
                 <div class="row">
                     <textarea name="question" ng-model="$ctrl.inputText" id="answer-input" cols="25" rows="10" class="col s10"></textarea>
                     <a ng-click="$ctrl.postAnswer()" class="waves-effect waves-teal btn-flat">Answer</a>
@@ -14,7 +14,9 @@
 
         <div id="tool-container" class="col s4">
             <div id="questions-queue">
-                <queue></queue>
+                <queue>
+                </queue>
+                <span>Waiting Line !</span>
             </div>
             <chat></chat>
         </div>

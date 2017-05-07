@@ -11,7 +11,7 @@ var cookieParser = require('cookie-parser');
 var date = new Date();
 
 var questions = [],
-    questionInterval = 20; // In seconds
+    questionInterval = 5; // In seconds
 
 var chatHistory = [],
     chatHistoryLength = 500,
