@@ -11,6 +11,7 @@ function Chat($scope, $resource) {
     var _this = this;
 
     //  $scope.test = "Yo mon pote"; 
+    this.chatHistory = [];
 
     var socket = io("http://localhost:3000");
 
@@ -25,7 +26,8 @@ function Chat($scope, $resource) {
         }, 1000);
 
         socket.on("chat message", function(obj) { // Lorsque l'on recois un chat message
-            console.log("Received", obj); // on affiche l'obj passé
+            //  console.log("Received", obj); // on affiche l'obj passé
+            _this.chatHistory.push(obj);
         });
 
         socket.on("disconnect", function() {
