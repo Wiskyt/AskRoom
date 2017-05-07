@@ -4,10 +4,10 @@
             <question id="question"></question>
 
             <div id="input-container" class="container">
-                <a class="waves-effect waves-teal btn-flat">Post Question</a>
+                <button ng-click="$ctrl.postQuestion()" class="btn">Post Question</button>
                 <div class="row">
-                    <textarea name="question" id="answer-input" cols="25" rows="10" class="col s10"></textarea>
-                    <a class="waves-effect waves-teal btn-flat">Answer</a>
+                    <textarea name="question" ng-model="$ctrl.inputText" id="answer-input" cols="25" rows="10" class="col s10"></textarea>
+                    <a ng-click="$ctrl.postAnswer()" class="waves-effect waves-teal btn-flat">Answer</a>
                 </div>
             </div>
         </div>
@@ -18,15 +18,5 @@
             </div>
             <chat></chat>
         </div>
-    </div>
-</div>
-
-<div id="post-modal" class="modal">
-    <div class="modal-content">
-        <h4>Posez votre question !</h4>
-
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>

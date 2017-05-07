@@ -23,7 +23,6 @@ var typicalQuestion2 = { id: 0, author: "Donzo", content: "Comment on fait pour 
 for (let i = 0; i < 20; i++) {
     if (i % 2 == 0) {
         typicalAnswer.upvotes = Math.round(Math.random() * 400);
-        console.log(typicalAnswer.upvotes);
         typicalAnswer.id = typicalQuestion.answers.length;
         typicalQuestion.answers.push(typicalAnswer);
     } else {
@@ -33,10 +32,10 @@ for (let i = 0; i < 20; i++) {
 }
 
 var questions = [],
-    questionInterval = 5; // In seconds
+    questionInterval = 20; // In seconds
 
 for (let i = 0; i < 20; i++) {
-    if (questionInterval == 5) {
+    if (questionInterval == 20) {
         typicalQuestion.id = questions.length;
         questions.push(typicalQuestion);
     } else {
@@ -57,6 +56,7 @@ io.on('connection', function(socket) { // Lorsqu'une connexion socket est crée 
     socket.emit("init question", questions[0]);
 
     socket.on("chat message", function(chatMsg) {
+        console.log("cm", chatMsg);
         if (chatMsg.author && chatMsg.message) {
             chatMsg.id = chatId;
             chatId++;
@@ -99,7 +99,7 @@ io.on('connection', function(socket) { // Lorsqu'une connexion socket est crée 
 });
 
 setInterval(function() {
-    console.log("Question switch ! State : ", questions);
+    console.log("Question switch !");
     if (questions[1]) {
         io.emit("next question", questions[0]);
         var questionSave = questions.shift();

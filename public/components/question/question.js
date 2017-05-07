@@ -12,6 +12,9 @@ var question;
 function Question($scope, $resource, socket) {
     var _this = this;
 
+
+    var _this = this;
+
     socket.on("init question", function(question) {
         swapQuestion(question, _this);
         refreshAnswers(question.answers, _this);

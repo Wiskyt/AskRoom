@@ -1,4 +1,10 @@
 "use strict";
+
+var username = localStorage.getItem('username');
+if (!username) {
+    localStorage.setItem('username', prompt("Username"));
+}
+
 var app = angular.module("askroom", ["ui.router", "ngResource", "ngAnimate"]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
