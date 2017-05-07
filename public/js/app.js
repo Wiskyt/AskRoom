@@ -11,6 +11,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
             name: "room",
             url: "/room",
             component: "room"
+        },
+        {
+            name: "chat",
+            url: "/chat",
+            component: "chat"
+
         }
     ];
 

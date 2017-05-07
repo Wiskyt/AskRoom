@@ -12,6 +12,7 @@ function Room($scope, $resource, socket) {
 
     $scope.test = "Yo mon pote";
 
+<<<<<<< Updated upstream
     this.chatHistory = [];
 
     socket.on("connect", function() {
@@ -52,4 +53,6 @@ function Room($scope, $resource, socket) {
             clearInterval(interval);
         });
     });
+=======
+>>>>>>> Stashed changes
 }
