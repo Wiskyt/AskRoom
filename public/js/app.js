@@ -1,5 +1,5 @@
 "use strict";
-var app = angular.module("askroom", ["ui.router", "ngResource"]);
+var app = angular.module("askroom", ["ui.router", "ngResource", "ngAnimate"]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     var states = [{
@@ -20,6 +20,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             name: "question",
             url: "/question",
             component: "question"
+        }, {
+            name: "queue",
+            url: "/queue",
+            component: "queue"
         }
     ];
 
