@@ -24,8 +24,8 @@ function Chat($scope, $resource, socket) {
 
     socket.on("chat message", function(obj) { // Lorsque l'on recois un chat message
         _this.chatHistory.push(obj);
-        console.log(obj);
-        console.log(_this.chatHistory);
+        //console.log(obj);
+        // console.log(_this.chatHistory);
 
         //  console.log("Received", obj); // on affiche l'obj passé
 
