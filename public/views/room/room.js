@@ -16,8 +16,13 @@ function Room($scope, $resource, socket) {
     //  var typicalAnswer = { id: 0, questionId: 0, author: "Wiskyt", content: "Va voir sur google" };
     //  var typicalUpvote = { questionId: 0, answerId: 0 };
 
+
     //  socket.emit("chat message", typicalChat); // on envoie un msg
     //  socket.emit("new question", typicalQuestion); // on envoie une new question
+
+
+
+
 
     //  socket.on("chat message", function(obj) { // on recois un msg
     //      console.log("CM Received", obj.author);
@@ -40,7 +45,10 @@ function Room($scope, $resource, socket) {
     //  });
 
 
+
     //  socket.on("disconnect", function() {
     //      clearInterval(interval);
     //  });
+
+
 }
