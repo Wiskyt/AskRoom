@@ -1,7 +1,7 @@
 #question-root {
-    background-color: #2c382c;
+    background-color: #EEEEEE;
     padding: 10px 20px 20px 20px;
-    color: white;
+    color: black;
     height: 70%;
 }
 
@@ -16,7 +16,7 @@
 }
 
 #input-container {
-    background-color: #544038;
+    background-color: #EEEEEE;
 }
 
 #answers-container {
