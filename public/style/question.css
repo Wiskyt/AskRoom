@@ -1,3 +1,19 @@
 #question-root {
-   background-color: white;
+    background-color: #2c382c;
+    padding: 10px 20px 20px 20px;
+    color: white;
+}
+
+#question-header {
+    padding-left: 30px;
+}
+
+#question-container {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#input-container {
+    background-color: #544038;
 }

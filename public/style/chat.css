@@ -1,25 +1,48 @@
 #chat-root {
-    height: 100%;
+    height: 50%;
     width: 100%;
+    background-color: #424942;
+    display: flex;
+    flex-direction: column;
 }
 
-.chatMessage {
-    background-color: rgb(140, 137, 137);
+#chat-title-container {
+    flex: 1;
+}
+
+#chat-messages-container {
+    flex: 1;
+}
+
+#chat-messages {
+    height: 65%;
+    overflow: scroll;
+    padding: 0px 20px 0px 20px;
+}
+
+.chat-message {
     color: white;
-    border-radius: 10px;
-    font-size: 25px;
+    font-size: 18px;
 }
 
-#charTitle {
-    font-size: 40px;
+#chat-title {
+    font-size: 18px;
     text-align: center;
+    padding: 5px 0px 20px 0px;
 }
 
-#chatValid {
-    width: 90%;
+#chat-input-container {
+    height: 50px;
+    display: flex;
+    flex-direction: right;
 }
 
-#chatButton {
+#chat-input {
+    width: 70%;
+}
+
+#chat-button {
+    width: 30%;
     background-color: rgb(117, 117, 117);
     border: none;
     color: white;
