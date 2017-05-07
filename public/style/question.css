@@ -2,6 +2,7 @@
     background-color: #2c382c;
     padding: 10px 20px 20px 20px;
     color: white;
+    height: 70%;
 }
 
 #question-header {
@@ -16,4 +17,84 @@
 
 #input-container {
     background-color: #544038;
+}
+
+#answers-container {
+    margin: 15px 0px 0px 0px;
+    width: 100%;
+    height: 76%;
+}
+
+.answers-row {
+    margin: 0;
+    display: flex;
+    flex-direction: right;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.answer {
+    width: 160px;
+    height: 140px;
+    padding: 5px 5px 5px 5px;
+    font-size: 12px;
+}
+
+.answer-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 8px 8px 8px 8px;
+    position: relative;
+    margin: 0;
+}
+
+.answer-content {
+    margin: 0;
+}
+
+.answer-footer {
+    width: 100%;
+    margin: 0;
+    height: 30px;
+    bottom: 0px;
+    position: absolute;
+}
+
+.answer-author {
+    text-align: left;
+    width: 100%;
+}
+
+.answer-upvote-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: right;
+}
+
+.upvote-icon {
+    font-size: 16px;
+}
+
+.upvote-icon:hover {
+    animation: blobIcon 100ms linear;
+    animation-fill-mode: forwards;
+}
+
+.upvote-text {
+    color: lightgreen;
+}
+
+@keyframes blobIcon {
+    0% {
+        font-size: 16px;
+        color: white;
+    }
+    100% {
+        font-size: 18px;
+        color: lightblue;
+    }
 }

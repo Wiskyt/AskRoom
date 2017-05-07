@@ -1,9 +1,32 @@
 <div id="question-root">
-    <div id="question-header">
-        {{$ctrl.author}} se demande...
+    <div id="question-body">
+        <div id="question-header">
+            {{$ctrl.author}} se demande...
+        </div>
+
+        <div id="question-container">
+            {{$ctrl.content}}
+        </div>
     </div>
 
-    <div id="question-container">
-        {{$ctrl.content}}
+    <div id="answers-container" class="container">
+        <div ng-repeat="answers in $ctrl.answersLayout" class="answers-row row">
+            <div ng-repeat="answer in answers" class="answer">
+                <div class="answer-inner container">
+                    <div class="answer-content" class="row">
+                        <div class="col s12">
+                            {{answer.content}}
+                        </div>
+                    </div>
+                    <div class="answer-footer row">
+                        <div class="answer-author col s6">{{answer.author}}</div>
+                        <div class="answer-upvote-container col s6">
+                            <span class="upvote-text">{{answer.upvotes}}</span> <i class="upvote-icon fa fa-arrow-circle-o-up"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
