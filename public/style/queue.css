@@ -1,0 +1,64 @@
+#queue-root {
+    height: 100%;
+    width: 100%;
+}
+
+.queueQuestionCome {
+    font-size: 40px;
+    text-align: center;
+}
+
+.queueQuestion {
+    color: white;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 25 25 25 25;
+    margin: 0;
+    width: 20%;
+}
+
+#queueContainerQuestions {
+    overflow-y: scroll;
+    height: 50%;
+    width: 90%;
+}
+
+.scrollbar {
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 65px;
+    background: rgb(150, 148, 148);
+    overflow-y: scroll;
+    margin-bottom: 2px;
+}
+
+.force-overflow {
+    min-height: 450px;
+}
+
+li {
+    width: 20%;
+    list-style-type: none;
+    padding: 6px 10px;
+}
+
+li:hover {
+    background: rgb(127, 127, 127);
+    width: 1500px;
+}
+
+.animate-show {
+    -webkit-transition: all linear 0.1s;
+    transition: all linear 0.1s;
+    opacity: 1;
+}
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+    display: inline-block !important;
+}
+
+.animate-show.ng-hide {
+    opacity: 0;
+}

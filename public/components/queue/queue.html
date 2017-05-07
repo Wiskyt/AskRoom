@@ -1,0 +1,14 @@
+<div id="queue-root">
+    <div class="queueQuestionCome">
+        <p>Question a venir :D</p>
+    </div>
+    <div id="queueContainerQuestions" class="scrollbar">
+        <li ng-repeat="queueQuestion in $ctrl.chatHistory track by $index" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" class="queueQuestion">
+
+            <b>{{queueQuestion.author}}</b> <i>ask</i> ... <span ng-show="hoverEdit" class="animate-show">{{queueQuestion.message}}</span>
+        </li>
+
+
+
+    </div>
+</div>
